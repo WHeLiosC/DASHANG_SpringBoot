@@ -1,10 +1,8 @@
-package com.ds.demo.controller;
+package com.dashang.controller;
 
-import com.ds.demo.Message.Mesg;
-import com.ds.demo.entity.FirmProducts;
-import com.ds.demo.entity.Order;
-import com.ds.demo.entity.Purchase;
-import com.ds.demo.mapper.PurchaseMapper;
+import com.dashang.entity.Purchase;
+import com.dashang.mapper.PurchaseMapper;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

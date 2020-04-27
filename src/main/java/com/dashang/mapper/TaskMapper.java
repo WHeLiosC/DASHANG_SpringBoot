@@ -1,13 +1,12 @@
-package com.ds.demo.mapper;
+package com.dashang.mapper;
 
-import com.ds.demo.Message.Mesg;
-import com.ds.demo.entity.*;
+import com.dashang.Message.Mesg;
+import com.dashang.entity.TakeTask;
+import com.dashang.entity.Task;
 import org.apache.ibatis.annotations.*;
-import org.apache.ibatis.type.JdbcType;
-import org.springframework.stereotype.Repository;
 import java.util.List;
 
-
+@Mapper
 public interface TaskMapper {
     //搜索所有订单
     @Select("select * from task")

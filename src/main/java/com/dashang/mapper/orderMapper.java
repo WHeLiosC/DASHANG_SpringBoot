@@ -1,14 +1,12 @@
 package com.dashang.mapper;
 
-
 import com.dashang.model.*;
-import com.dashang.model.orderDomain;
-import com.ds.demo.entity.Purchase;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.Update;
 import org.springframework.core.annotation.Order;
+import com.dashang.entity.Product;
 
 import java.util.List;
 
@@ -17,8 +15,8 @@ public interface orderMapper {
    //订单相关，写在xml里面了
    @Insert("insert into orders (PRODUCT_ID,USER_ID,NUMS,RECEIPT) values (#{productId},#{userId},#{nums},#{receipt});")
    void submitOrder(int productId,int userId,int nums,boolean receipt);
-//   @Select("select * from orders inner join product on orders.PRODUCT_ID=product.PRODUCT_ID")
-//   List<orderFull>  getAllOrders();
+   @Select("select * from orders inner join product on orders.PRODUCT_ID=product.PRODUCT_ID")
+   List<orderFull>  getAllOrders();
    @Select("select * from orders inner join product on orders.PRODUCT_ID=product.PRODUCT_ID where USER_ID=#{userId} ")
    List<orderFull> getOrder(int userId);
    @Insert("insert into purchase (PRODUCT_ID,NUMS) values (#{productId},#{nums})")

@@ -1,8 +1,8 @@
-package com.ds.demo.controller;
+package com.dashang.controller;
 
-import com.ds.demo.Message.Mesg;
-import com.ds.demo.entity.TakeTask;
-import com.ds.demo.mapper.TaskMapper;
+import com.dashang.Message.Mesg;
+import com.dashang.entity.TakeTask;
+import com.dashang.mapper.TaskMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

@@ -1,14 +1,14 @@
-package com.ds.demo.mapper;
+package com.dashang.mapper;
 
-import com.ds.demo.Message.Mesg;
-import com.ds.demo.entity.*;
+import com.dashang.Message.Mesg;
+import com.dashang.entity.FirmProducts;
+import com.dashang.entity.Product;
+import com.dashang.entity.User;
 import org.apache.ibatis.annotations.*;
-import org.apache.ibatis.type.JdbcType;
-import org.springframework.stereotype.Repository;
 import java.util.List;
 
 
-
+@Mapper
 public interface ProductMapper {
     //向商品表插入 新 商品
     @Insert("insert into product values(null,#{productName},#{productBrand},#{price},#{description},#{pic})")

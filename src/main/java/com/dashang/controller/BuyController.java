@@ -1,9 +1,10 @@
-package com.ds.demo.controller;
+package com.dashang.controller;
 
-import com.ds.demo.Message.Mesg;
-import com.ds.demo.entity.*;
-import com.ds.demo.mapper.PurchaseMapper;
-import com.ds.demo.mapper.TaskMapper;
+import com.dashang.Message.Mesg;
+import com.dashang.entity.Purchase;
+import com.dashang.entity.Task;
+import com.dashang.mapper.PurchaseMapper;
+import com.dashang.mapper.TaskMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

@@ -1,4 +1,4 @@
-package com.ds.demo.entity;
+package com.dashang.entity;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class TakeTask {

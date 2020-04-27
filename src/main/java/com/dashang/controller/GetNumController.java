@@ -1,7 +1,7 @@
-package com.ds.demo.controller;
+package com.dashang.controller;
 
-import com.ds.demo.entity.TableName;
-import com.ds.demo.mapper.NumMapper;
+import com.dashang.entity.TableName;
+import com.dashang.mapper.NumMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;

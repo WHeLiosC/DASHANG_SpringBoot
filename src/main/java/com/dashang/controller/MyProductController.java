@@ -1,8 +1,9 @@
-package com.ds.demo.controller;
+package com.dashang.controller;
 
-import com.ds.demo.entity.Product;
-import com.ds.demo.entity.User;
-import com.ds.demo.mapper.ProductMapper;
+
+import com.dashang.entity.Product;
+import com.dashang.entity.User;
+import com.dashang.mapper.ProductMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;

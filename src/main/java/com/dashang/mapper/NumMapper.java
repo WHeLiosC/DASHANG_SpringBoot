@@ -1,13 +1,12 @@
-package com.ds.demo.mapper;
+package com.dashang.mapper;
 
-import com.ds.demo.Message.Mesg;
-import com.ds.demo.entity.*;
+import com.dashang.entity.TableName;
 import org.apache.ibatis.annotations.*;
 import org.apache.ibatis.type.JdbcType;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
-
+@Mapper
 public interface NumMapper {
     //搜索所有商品
     @Select("select count(*) from ${name}")

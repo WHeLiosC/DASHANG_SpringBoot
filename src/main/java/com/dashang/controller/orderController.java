@@ -1,8 +1,8 @@
 package com.dashang.controller;
 
+import com.dashang.entity.Product;
 import com.dashang.model.Brand;
-import com.dashang.model.Product;
-import com.dashang.model.orderDomain;
+
 import com.dashang.model.orderFull;
 import com.dashang.service.orderService;
 import org.springframework.beans.factory.annotation.Autowired;

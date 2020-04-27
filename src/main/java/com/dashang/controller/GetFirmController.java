@@ -1,8 +1,8 @@
-package com.ds.demo.controller;
+package com.dashang.controller;
 
-import com.ds.demo.entity.Page;
-import com.ds.demo.entity.UserMesg;
-import com.ds.demo.mapper.UserMesgMapper;
+import com.dashang.entity.Page;
+import com.dashang.entity.UserMesg;
+import com.dashang.mapper.UserMesgMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;

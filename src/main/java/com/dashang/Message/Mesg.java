@@ -1,4 +1,4 @@
-package com.ds.demo.Message;
+package com.dashang.Message;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 

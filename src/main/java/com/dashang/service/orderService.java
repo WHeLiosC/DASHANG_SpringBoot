@@ -1,8 +1,8 @@
 package com.dashang.service;
 
+import com.dashang.entity.Product;
 import com.dashang.mapper.orderMapper;
 import com.dashang.model.Brand;
-import com.dashang.model.Product;
 import com.dashang.model.orderDomain;
 import com.dashang.model.orderFull;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -47,7 +47,7 @@ public class orderService {
 
 
     // 商品列表相关
-    public List<Product> getAllProducts(int size,int page){
+    public List<Product> getAllProducts(int size, int page){
         int n=orderMapper.getAllProducts().size();
         if((n-1)>=page*size){
             return  orderMapper.getAllProducts().subList((page-1)*size, page*size);

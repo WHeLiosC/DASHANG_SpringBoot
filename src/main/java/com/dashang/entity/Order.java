@@ -1,4 +1,4 @@
-package com.ds.demo.entity;
+package com.dashang.entity;
 
 public class Order {
     private int orderId;

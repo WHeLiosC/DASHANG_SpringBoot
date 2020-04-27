@@ -1,11 +1,12 @@
-package com.ds.demo.mapper;
+package com.dashang.mapper;
 
-import com.ds.demo.entity.Order;
-import com.ds.demo.entity.UserMesg;
+
+import com.dashang.entity.UserMesg;
+import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
 
 import java.util.List;
-
+@Mapper
 public interface UserMesgMapper {
     @Select("select * from userMessage")
     List<UserMesg> getAll();

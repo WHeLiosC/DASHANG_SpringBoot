@@ -1,7 +1,7 @@
-package com.ds.demo.controller;
+package com.dashang.controller;
 
-import com.ds.demo.entity.Task;
-import com.ds.demo.mapper.TaskMapper;
+import com.dashang.entity.Task;
+import com.dashang.mapper.TaskMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
