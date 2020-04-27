@@ -45,6 +45,7 @@ public class orderService {
     }
     public void Receipt(int orderId){ orderMapper.Receipt(orderId); }
 
+    public List<orderFull>getAllOrders(){return orderMapper.getAllOrders();}
 
     // 商品列表相关
     public List<Product> getAllProducts(int size, int page){

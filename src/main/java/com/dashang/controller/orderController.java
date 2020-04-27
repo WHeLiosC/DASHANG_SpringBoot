@@ -16,8 +16,8 @@ public class orderController {
     private orderService orderService;
 
     //订单相关
-//    @RequestMapping("/showAllOrder")
-//    public List<orderFull> showAllOrder(){ return orderService.getAllOrders(); }
+    @RequestMapping("/showAllOrder")
+    public List<orderFull> showAllOrder(){ return orderService.getAllOrders(); }
 
     @GetMapping("/showUserOrder")
     public List<orderFull> showUserOrder( int userId,int page,int size){ return orderService.getOrder(userId,page,size); }
