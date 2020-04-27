@@ -40,7 +40,7 @@
     <select id="haveDetail" resultType="UserDomain">
         select *
         from usermessage
-        where user_name=#{userName}
+        where user_id=#{userId}
     </select>
 
     <!-- 更新用户信息 -->
