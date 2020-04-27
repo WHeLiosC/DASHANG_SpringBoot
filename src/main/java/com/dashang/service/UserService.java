@@ -83,13 +83,12 @@ public class UserService {
             boolean haveDetail = (userMapper.haveDetail(ud) != null);
             if(haveDetail){
                 userMapper.updateDetail(ud);
-                res.setSuccess(true);
-                res.setMsg("修改信息成功");
             }else{
                 userMapper.addDetail(ud);
-                res.setSuccess(true);
-                res.setMsg("修改信息成功");
             }
+            res.setDetail(ud);
+            res.setSuccess(true);
+            res.setMsg("修改信息成功");
         } catch (Exception e) {
             res.setMsg(e.getMessage());
             e.printStackTrace();

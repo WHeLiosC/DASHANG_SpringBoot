@@ -44,13 +44,13 @@
     </select>
 
     <!-- 更新用户信息 -->
-    <update id="updateMessage">
+    <update id="updateDetail">
         UPDATE usermessage
-        SET user_name=#{userName}, assress=#{adress}, email=#{email}, tel_number=#{telNumber}, pic=#{pic}, cid=#{cid}
+        SET user_name=#{userName}, address=#{address}, email=#{email}, tel_number=#{telNumber}, pic=#{pic}, cid=#{cid}
     </update>
 
     <!-- 插入新的用户信息 -->
-    <insert id="addMessage">
+    <insert id="addDetail">
         insert into
         usermessage(user_name, cid, address, tel_number, email, pic)
         values (#{userName}, #{cid}, #{address}, #{telNumber}, #{email}, #{pic})

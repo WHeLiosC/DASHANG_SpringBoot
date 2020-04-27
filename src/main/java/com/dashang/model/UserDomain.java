@@ -7,6 +7,15 @@ public class UserDomain {
     private String telNumber;
     private String email;
     private String pic;
+    private String userName;
+
+    public String getUserName() {
+        return userName;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
 
     public int getUserId() {
         return userId;
@@ -65,6 +74,7 @@ public class UserDomain {
                 ", telNumber='" + telNumber + '\'' +
                 ", email='" + email + '\'' +
                 ", pic='" + pic + '\'' +
+                ", userName='" + userName + '\'' +
                 '}';
     }
 }
