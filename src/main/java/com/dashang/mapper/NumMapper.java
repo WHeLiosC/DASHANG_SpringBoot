@@ -8,7 +8,7 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 @Mapper
 public interface NumMapper {
-    //搜索所有商品
+    //搜索某个表的数量
     @Select("select count(*) from ${name}")
     int getNum(TableName tableName);
 }

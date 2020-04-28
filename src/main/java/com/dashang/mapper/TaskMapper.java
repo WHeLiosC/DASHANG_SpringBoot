@@ -9,7 +9,7 @@ import java.util.List;
 @Mapper
 public interface TaskMapper {
     //搜索所有订单
-    @Select("select * from task")
+    @Select("select t.*, p.PRODUCT_NAME from task t join product p on t.PRODUCT_ID = p.PRODUCT_ID")
     List<Task> getAll();
 
     //向任务表插入 新任务

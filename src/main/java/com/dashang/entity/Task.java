@@ -8,6 +8,17 @@ public class Task {
     private int nums;
     private int price;
     private int userId;
+    private String productName;
+
+    @JsonProperty(value = "PRODUCT_NAME")
+    public String getProductName() {
+        return productName;
+    }
+
+    @JsonProperty(value = "PRODUCT_NAME")
+    public void setProductName(String productName) {
+        this.productName = productName;
+    }
 
     public Task(int TASK_ID, int TASK_STATE, int PRODUCT_ID, int NUMS, int PRICE, int USER_ID) {
         this.taskId = TASK_ID;

@@ -3,6 +3,18 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class UserMesg {
     private int userId;
+    private String userName;
+
+    @JsonProperty(value = "USER_NAME")
+    public String getUserName() {
+        return userName;
+    }
+
+    @JsonProperty(value = "USER_NAME")
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
+
     private String cid;
     private String address;
     private String telNumber;

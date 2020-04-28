@@ -6,6 +6,17 @@ public class Purchase {
     private int purchaseId;
     private int productId;
     private int nums;
+    private String productName;
+
+    @JsonProperty(value = "PRODUCT_NAME")
+    public String getProductName() {
+        return productName;
+    }
+
+    @JsonProperty(value = "PRODUCT_NAME")
+    public void setProductName(String productName) {
+        this.productName = productName;
+    }
 
     @JsonProperty(value = "PURCHASE_ID")
     public int getPURCHASE_ID() {

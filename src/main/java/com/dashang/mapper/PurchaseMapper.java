@@ -8,7 +8,7 @@ import java.util.List;
 @Mapper
 public interface PurchaseMapper {
     //搜索所有采购
-    @Select("select * from purchase")
+    @Select("select pc.PURCHASE_ID, pd.PRODUCT_ID, pd.PRODUCT_NAME, pc.NUMS from purchase pc join product pd on pc.PRODUCT_ID=pd.PRODUCT_ID")
     List<Purchase> getAll();
 
     //从厂商商品列表中删除（商品，厂商）记录
