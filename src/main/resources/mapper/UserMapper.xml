@@ -57,7 +57,7 @@
     </insert>
 
     <!-- 获取用户信息 -->
-    <select id="getUserInfo" resultType="UserDomain" parameterType="int">
+    <select id="getUserInfo" resultType="UserDomain">
         select *
         from usermessage
         where user_id=#{userId}
