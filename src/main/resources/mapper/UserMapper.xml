@@ -59,7 +59,7 @@
     <!-- 获取用户信息 -->
     <select id="getUserInfo" resultType="UserDomain" parameterType="int">
         select *
-        from userMessage
+        from usermessage
         where user_id=#{userId}
     </select>
 
