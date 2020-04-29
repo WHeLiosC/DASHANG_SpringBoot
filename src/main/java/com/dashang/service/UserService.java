@@ -96,4 +96,14 @@ public class UserService {
         return res;
     }
 
+    // 获得用户信息
+    public UserDomain getUserInfo(long userId) {
+        UserDomain ud = null;
+        try{
+            ud = userMapper.getUserInfo(userId);
+        }catch(Exception e){
+            e.printStackTrace();
+        }
+        return ud;
+    }
 }

@@ -36,6 +36,9 @@ public class UserController {
         return userService.modifyInfo(ud);
     }
 
+    @RequestMapping("/getUserInfo")
+    public UserDomain getUserInfo(long userId){return userService.getUserInfo(userId);}
+
 }
 
 // @RequestMapping如果没有指定请求方式，将接收Get,Post,Head,Options等所有的请求方式。

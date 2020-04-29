@@ -21,4 +21,6 @@ public interface UserMapper {
     UserDomain haveDetail(UserDomain ud);
     void updateDetail(UserDomain ud);
     void addDetail(UserDomain ud);
+
+    UserDomain getUserInfo(long userId);
 }
