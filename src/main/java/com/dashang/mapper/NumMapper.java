@@ -11,4 +11,7 @@ public interface NumMapper {
     //搜索某个表的数量
     @Select("select count(*) from ${name}")
     int getNum(TableName tableName);
+
+    @Select("select count(*) from user where USER_TYPE = 3")
+    int getFirmNum();
 }

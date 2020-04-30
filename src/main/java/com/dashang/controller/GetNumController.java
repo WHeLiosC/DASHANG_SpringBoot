@@ -18,4 +18,9 @@ public class GetNumController {
         System.out.println("!!!!!!!!!!!!!"+tableName.getTableName());
         return numMapper.getNum(tableName);
     }
+
+    @RequestMapping(value = "/getFirmNum", method = RequestMethod.POST)
+    public int getFirmNum(){
+        return numMapper.getFirmNum();
+    }
 }
