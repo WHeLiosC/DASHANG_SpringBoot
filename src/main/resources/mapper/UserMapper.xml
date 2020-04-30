@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<!-- 在自定义的xml文件中书写sql语句，每个书写sql语句的xml文件必须有一个mapper根标签
+     namespace: 给当前xml文件起别名 -->
+
+<mapper namespace="com.dashang.mapper.UserMapper">
+
+    <!-- mapper中有四个基本标签：select, update, delete, insert
+         每一条语句都有一个id，用于唯一标识一条语句，不可重复 -->
+
+    <!-- 获取所有的用户 -->
+    <select id="getUser" resultType="UserDomain">
+        SELECT * FROM userinfo
+    </select>
+
+    <!-- 登录验证 -->
+    <select id="login" resultType="User">
+        SELECT user_name, password, user_type, user_id
+        FROM user
+        WHERE user_name=#{userName} and password=#{password} and user_type=#{userType}
+    </select>
+
+    <!-- 注册检验用户名是否存在 -->
+    <select id="isExist" resultType="User">
+        SELECT user_name, password, user_type, user_id
+        FROM user
+        WHERE user_name=#{userName} and user_type=#{userType}
+    </select>
+
+    <!-- 增加用户记录 -->
+    <insert id="register">
+        insert into user
+        (user_name, password, user_type)
+        values
+        (#{userName}, #{password}, #{userType})
+    </insert>
+
+    <!-- 是否存在用户的详细信息，不存在则插入元组，否则更新元组 -->
+    <select id="haveDetail" resultType="UserDomain">
+        select *
+        from usermessage
+        where user_id=#{userId}
+    </select>
+
+    <!-- 更新用户信息 -->
+    <update id="updateDetail">
+        UPDATE usermessage
+        SET user_id=#{userId}, user_name=#{userName}, address=#{address}, email=#{email}, tel_number=#{telNumber}, pic=#{pic}, cid=#{cid}
+    </update>
+
+    <!-- 插入新的用户信息 -->
+    <insert id="addDetail">
+        insert into
+        usermessage(user_id, user_name, cid, address, tel_number, email, pic)
+        values (#{userId},#{userName}, #{cid}, #{address}, #{telNumber}, #{email}, #{pic})
+    </insert>
+
+    <!-- 获取用户信息 -->
+    <select id="getUserInfo" resultType="UserDomain">
+        select *
+        from usermessage
+        where user_id=#{userId}
+    </select>
+
+</mapper>
