@@ -48,11 +48,12 @@ public class orderController {
     public List<Brand> showAllBrand(int size,int page){ return orderService.getAllBrands(size,page); }
 
     //列表总数查询
-    @GetMapping("/getNum")
-    public int getNum(String listName){
-        return orderService.getNum(listName);
+    @GetMapping("/getUserOrderTotal")
+    public int getUserOrderTotal(int userId){
+        return orderService.getUserOrderTotal(userId);
     }
-
+    @GetMapping("/getBrandProductTotal")
+    public int getBrandProductTotal(int brandId){return orderService.getBrandProductTotal(brandId);}
 }
 // @RequestMapping如果没有指定请求方式，将接收Get,Post,Head,Options等所有的请求方式
 // @GetMapping是一个组合注解，是@RequestMapping(method = RequestMethod.GET)的缩写。 

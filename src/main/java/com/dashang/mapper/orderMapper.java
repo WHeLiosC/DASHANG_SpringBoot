@@ -40,7 +40,9 @@ public interface orderMapper {
    List<Brand> getAllBrands();
 
    //获取列表最大
-   @Select("select count(*) from #{listName}")
-   int getNum(String listName);
+   @Select("select count(*) from orders where USER_ID=#{userId}")
+   int getUserOrderTotal(int userId);
+   @Select("select count(*) from brand where BRAND_ID=#{brandId}")
+   int getBrandProductTotal(int brandId);
 
 }

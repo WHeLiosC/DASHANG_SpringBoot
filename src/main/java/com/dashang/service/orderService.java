@@ -79,8 +79,8 @@ public class orderService {
     }
 
     //获得列表最大
-    public int getNum(String listName){
-        return orderMapper.getNum(listName);
+    public int getUserOrderTotal(int userId){
+        return orderMapper.getUserOrderTotal(userId);
     }
-
+    public int getBrandProductTotal(int brandId){return orderMapper.getBrandProductTotal(brandId);}
 }
