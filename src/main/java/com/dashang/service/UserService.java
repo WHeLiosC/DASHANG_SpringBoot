@@ -97,13 +97,22 @@ public class UserService {
     }
 
     // 获得用户信息
-    public UserDomain getUserInfo(long userId) {
+    public Result getUserInfo(Integer userId) {
+        Result res = new Result();
+        res.setSuccess(false);
         UserDomain ud = null;
         try{
             ud = userMapper.getUserInfo(userId);
+            // System.out.println(ud.getEmail());
+            res.setDetail(ud);
+            if(ud!=null){
+                res.setSuccess(true);
+                res.setMsg("获取成功");
+            }
         }catch(Exception e){
             e.printStackTrace();
         }
-        return ud;
+        return res;
     }
+
 }
