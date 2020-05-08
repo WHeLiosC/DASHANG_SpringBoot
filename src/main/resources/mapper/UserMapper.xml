@@ -36,6 +36,14 @@
         (#{userName}, #{password}, #{userType})
     </insert>
 
+    <!-- 在增加用户记录的同时将userId加入到usermessage表 -->
+    <insert id="insertUserId">
+        insert into usermessage(user_id)
+        select user_id
+        from user
+        where user_type=#{userType} and user_name=#{userName}
+    </insert>
+
     <!-- 是否存在用户的详细信息，不存在则插入元组，否则更新元组 -->
     <select id="haveDetail" resultType="UserDomain">
         select *
@@ -46,7 +54,8 @@
     <!-- 更新用户信息 -->
     <update id="updateDetail">
         UPDATE usermessage
-        SET user_id=#{userId}, user_name=#{userName}, address=#{address}, email=#{email}, tel_number=#{telNumber}, pic=#{pic}, cid=#{cid}
+        SET user_name=#{userName}, address=#{address}, email=#{email}, tel_number=#{telNumber}, pic=#{pic}, cid=#{cid}
+        WHERE user_id=#{userId}
     </update>
 
     <!-- 插入新的用户信息 -->
@@ -61,6 +70,15 @@
         select *
         from usermessage
         where user_id=#{userId}
+    </select>
+    <select id="selectUserID" resultType="java.lang.Integer">
+            select user_id from user where user_name=#{name};
+    </select>
+    <select id="selectUserIdByEmail" resultType="java.lang.Integer">
+            select user_id from usermessage where email=#{email};
+    </select>
+    <select id="selectUserNameByEmail" resultType="java.lang.String">
+            select user_name from user where user_id in (select user_id from usermessage where email = #{email});
     </select>
 
 </mapper>

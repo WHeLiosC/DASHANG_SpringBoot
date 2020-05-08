@@ -3,18 +3,12 @@ package com.dashang.service;
 import com.alibaba.fastjson.JSONObject;
 
 
-import com.dashang.dao.DsDraftDao;
-import com.dashang.dao.DsInboxDao;
-import com.dashang.dao.DsSentDao;
-import com.dashang.dao.DsUserDao;
-import com.dashang.entity.DsDraft;
-import com.dashang.entity.DsInbox;
-import com.dashang.entity.DsSent;
+import com.dashang.mapper.*;
+import com.dashang.model.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
-import java.util.Date;
 
 @Service(value = "sendservice")
 public class SendService {
@@ -22,8 +16,10 @@ public class SendService {
     private DsSentDao sentDao;
     @Autowired
     private DsInboxDao inboxDao;
-    @Autowired
-    private DsUserDao userDao;
+    //    @Autowired
+//    private DsUserDao userDao;
+    @Resource
+    UserMapper userMapper;
     @Autowired
     private DsDraftDao draftDao;
 
@@ -31,17 +27,17 @@ public class SendService {
     public int saveMail(JSONObject jsonData) {
         DsInbox dsInbox = new DsInbox();
         DsSent dsSent = new DsSent();
-        int senduserid = userDao.selectUserID(jsonData.getString("userName"));
+        int senduserid = userMapper.selectUserID(jsonData.getString("userName"));
         dsSent.setUserId(senduserid);
         dsSent.setSentTheme(jsonData.getString("mailTheme"));
         dsSent.setSentSender(jsonData.getString("userName"));
         dsSent.setSentDate(jsonData.getDate("mailDate"));
-        String recipientName = userDao.selectUserNameByEmail(jsonData.getString("mailRecipient"));
+        String recipientName = userMapper.selectUserNameByEmail(jsonData.getString("mailRecipient"));
         dsSent.setSentRecipient(recipientName);
         dsSent.setSentDetial(jsonData.getString("mailDetial"));
         int a = sentDao.insert(dsSent);
 
-        int userid = userDao.selectUserIdByEmail(jsonData.getString("mailRecipient"));
+        int userid = userMapper.selectUserIdByEmail(jsonData.getString("mailRecipient"));
         dsInbox.setUserId(userid);
         dsInbox.setMailTheme(jsonData.getString("mailTheme"));
         dsInbox.setMailSender(jsonData.getString("userName"));
@@ -55,13 +51,13 @@ public class SendService {
 
     public int saveDraft(JSONObject jsonData) {
         DsDraft dsDraft = new DsDraft();
-        int userid = userDao.selectUserID(jsonData.getString("userName"));
+        int userid = userMapper.selectUserID(jsonData.getString("userName"));
         dsDraft.setUserId(userid);
         dsDraft.setDraftTheme(jsonData.getString("mailTheme"));
         dsDraft.setDraftSender(jsonData.getString("userName"));
         dsDraft.setDraftDate(jsonData.getDate("mailDate"));
         if(jsonData.getString("mailRecipient") != ""){
-            String recipientName = userDao.selectUserNameByEmail(jsonData.getString("mailRecipient"));
+            String recipientName = userMapper.selectUserNameByEmail(jsonData.getString("mailRecipient"));
             dsDraft.setDraftRecipient(recipientName);
         }else {
             dsDraft.setDraftRecipient(jsonData.getString("mailRecipient"));

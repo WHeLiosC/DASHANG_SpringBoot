@@ -1,6 +1,6 @@
-package com.dashang.dao;
+package com.dashang.mapper;
 
-import com.dashang.entity.DsDraft;
+import com.dashang.model.*;
 import com.github.pagehelper.Page;
 import org.apache.ibatis.annotations.Mapper;
 

@@ -59,6 +59,7 @@ public class UserService {
             boolean canRegister = (userMapper.isExist(user) == null);
             if(canRegister){
                 userMapper.register(user);
+                userMapper.insertUserId(user);
                 res.setSuccess(true);
                 res.setMsg("注册成功");
             }else{

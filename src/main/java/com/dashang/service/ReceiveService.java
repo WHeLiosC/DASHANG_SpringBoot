@@ -1,14 +1,7 @@
 package com.dashang.service;
 
-import com.alibaba.fastjson.JSON;
-
-import com.dashang.dao.DsDraftDao;
-import com.dashang.dao.DsInboxDao;
-import com.dashang.dao.DsSentDao;
-import com.dashang.dao.DsUserDao;
-import com.dashang.entity.DsDraft;
-import com.dashang.entity.DsInbox;
-import com.dashang.entity.DsSent;
+import com.dashang.mapper.*;
+import com.dashang.model.*;
 import com.dashang.entity.PageResult;
 import com.github.pagehelper.Page;
 import com.github.pagehelper.PageHelper;
@@ -16,8 +9,6 @@ import com.github.pagehelper.PageInfo;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
-import java.util.List;
-import java.util.Map;
 
 @Service(value = "receiveservice")
 public class ReceiveService {
@@ -25,8 +16,10 @@ public class ReceiveService {
     DsDraftDao draftDao;
     @Resource
     DsInboxDao inboxDao;
+    //    @Resource
+//    DsUserDao userDao;
     @Resource
-    DsUserDao userDao;
+    UserMapper userMapper;
     @Resource
     DsSentDao sentDao;
 
@@ -65,7 +58,7 @@ public class ReceiveService {
 
 
     public PageResult<DsInbox> queryInbox(String userName, Integer page, Integer size) {
-        int userId = userDao.selectUserID(userName);
+        int userId = userMapper.selectUserID(userName);
         // 添加分页条件
         PageHelper.startPage(page,size);
 
@@ -75,7 +68,7 @@ public class ReceiveService {
     }
 
     public PageResult<DsDraft> queryDraft(String userName, Integer page, Integer size) {
-        int userId = userDao.selectUserID(userName);
+        int userId = userMapper.selectUserID(userName);
         System.out.println(userId);
         // 添加分页条件
 
@@ -87,7 +80,7 @@ public class ReceiveService {
     }
 
     public PageResult<DsSent> querySent(String userName, Integer page, Integer size) {
-        int userId = userDao.selectUserID(userName);
+        int userId = userMapper.selectUserID(userName);
         System.out.println(userId);
         // 添加分页条件
 

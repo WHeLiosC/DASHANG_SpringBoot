@@ -3,10 +3,8 @@ package com.dashang.service;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 
-import com.dashang.dao.DsDraftDao;
-import com.dashang.dao.DsInboxDao;
-import com.dashang.dao.DsSentDao;
-import com.dashang.dao.DsUserDao;
+import com.dashang.mapper.*;
+import com.dashang.model.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -19,8 +17,8 @@ public class DeleteService {
     private DsSentDao sentDao;
     @Autowired
     private DsInboxDao inboxDao;
-    @Autowired
-    private DsUserDao userDao;
+    //    @Autowired
+//    private DsUserDao userDao;
     @Autowired
     private DsDraftDao draftDao;
 

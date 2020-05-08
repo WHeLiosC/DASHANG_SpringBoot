@@ -1,12 +1,9 @@
-package com.dashang.dao;
+package com.dashang.mapper;
 
 
-import com.dashang.entity.DsInbox;
+import com.dashang.model.*;
 import com.github.pagehelper.Page;
 import org.apache.ibatis.annotations.Mapper;
-
-import java.util.List;
-import java.util.Map;
 
 @Mapper
 public interface DsInboxDao {
